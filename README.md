@@ -5,13 +5,11 @@ RESTful API built with Node.js, Express, and Mongodb client.
 
 ## Quick Start
 
-To set up the project, you have the option to deploy it either locally or using Docker.
+To quickly set up the project, you can use Docker.
 
-If you choose to deploy locally, you must have a running instance of MongoDB. You need to modify the config files to use the local connection.
+Make sure to add a valid `https://api.openweathermap.org/data/3.0/onecall` URL to the configuration file.
 
-You need to add a valid `https://api.openweathermap.org/data/3.0/onecall` URL to the configuration file.
-
-The quickest way to get the project running is by using Docker commands. Executing `npm run docker` and `docker:test` will initiate a MongoDB instance and the application itself, with all configurations properly linked.
+To get the project running, execute the following Docker commands: `npm run docker` and `docker:test`. This will start a MongoDB instance and the application, with all configurations properly linked and the dependencies installed.
 
 
 ## Table of Contents
