@@ -7,7 +7,7 @@ RESTful API built with Node.js, Express, and Mongodb client.
 
 To quickly set up the project, you can use Docker.
 
-Make sure to add a valid `https://api.openweathermap.org/data/3.0/onecall` URL to the configuration file.
+Make sure to add a valid `https://api.openweathermap.org/data/3.0/onecall` apiKey to the configuration file.
 
 To get the project running, execute the following Docker commands: `npm run docker` and `docker:test`. This will start a MongoDB instance and the application, with all configurations properly linked and the dependencies installed.
 
