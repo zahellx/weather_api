@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb-base",
+    "plugins": ["import"],
+    "rules": {
+      // Aquí puedes personalizar las reglas de ESLint según tus preferencias
+    },
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never",
+        "mjs": "never"
+      }
+    ]
+  }
+  

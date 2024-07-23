@@ -1,0 +1,16 @@
+{
+  "mongo": {
+    "url": "mongodb://user:user@mongo:27017/weather?authSource=admin",
+    "dbName": "weather",
+    "weather": {
+      "expirationMilliseconds": 10800000
+    }
+  },
+  "weatherService": {
+    "baseUrl": "https://api.openweathermap.org/data/3.0/onecall",
+    "apiKey": "0c7859539ecf485efed0856dade106ce"
+  },
+  "server": {
+    "port": "3000"
+  }
+}

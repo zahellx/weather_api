@@ -1,0 +1,414 @@
+components:
+  schemas:
+    Weather:
+      type: object
+      properties:
+        lat:
+          type: number
+        lon:
+          type: number
+        timezone:
+          type: string
+        timezone_offset:
+          type: number
+        current:
+          type: object
+          properties:
+            dt:
+              type: number
+            sunrise:
+              type: number
+            sunset:
+              type: number
+            temp:
+              type: number
+            feels_like:
+              type: number
+            pressure:
+              type: number
+            humidity:
+              type: number
+            dew_point:
+              type: number
+            uvi:
+              type: number
+            clouds:
+              type: number
+            visibility:
+              type: number
+            wind_speed:
+              type: number
+            wind_deg:
+              type: number
+            weather:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  main:
+                    type: string
+                  description:
+                    type: string
+                  icon:
+                    type: string
+        hourly:
+          type: array
+          items:
+            type: object
+            properties:
+              dt:
+                type: number
+              temp:
+                type: number
+              feels_like:
+                type: number
+              pressure:
+                type: number
+              humidity:
+                type: number
+              dew_point:
+                type: number
+              uvi:
+                type: number
+              clouds:
+                type: number
+              visibility:
+                type: number
+              wind_speed:
+                type: number
+              wind_deg:
+                type: number
+              weather:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    main:
+                      type: string
+                    description:
+                      type: string
+                    icon:
+                      type: string
+        daily:
+          type: array
+          items:
+            type: object
+            properties:
+              dt:
+                type: number
+              sunrise:
+                type: number
+              sunset:
+                type: number
+              temp:
+                type: object
+                properties:
+                  day:
+                    type: number
+                  min:
+                    type: number
+                  max:
+                    type: number
+                  night:
+                    type: number
+                  eve:
+                    type: number
+                  morn:
+                    type: number
+              feels_like:
+                type: object
+                properties:
+                  day:
+                    type: number
+                  night:
+                    type: number
+                  eve:
+                    type: number
+                  morn:
+                    type: number
+              pressure:
+                type: number
+              humidity:
+                type: number
+              dew_point:
+                type: number
+              wind_speed:
+                type: number
+              wind_deg:
+                type: number
+              weather:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    main:
+                      type: string
+                    description:
+                      type: string
+                    icon:
+                      type: string
+              clouds:
+                type: number
+              pop:
+                type: number
+              uvi:
+                type: number
+      example:
+        lat: 33.44
+        lon: -94.04
+        timezone: America/Chicago
+        timezone_offset: -18000
+        current:
+          dt: 1625450400
+          sunrise: 1625430000
+          sunset: 1625480000
+          temp: 25.5
+          feels_like: 25.5
+          pressure: 1013
+          humidity: 50
+          dew_point: 15.5
+          uvi: 5.5
+          clouds: 20
+          visibility: 10000
+          wind_speed: 5.14
+          wind_deg: 200
+          weather:
+            - id: 800
+              main: Clear
+              description: clear sky
+              icon: 01d
+        daily:
+          - dt: 1625450400
+            sunrise: 1625430000
+            sunset: 1625480000
+            temp:
+              day: 25.5
+              min: 15.5
+              max: 30.5
+              night: 20.5
+              eve: 25.5
+              morn: 15.5
+            feels_like:
+              day: 25.5
+              night: 20.5
+              eve: 25.5
+              morn: 15.5
+            pressure: 1013
+            humidity: 50
+            dew_point: 15.5
+            wind_speed: 5.14
+            wind_deg: 200
+            weather:
+              - id: 800
+                main: Clear
+                description: clear sky
+                icon: 01d
+            clouds: 20
+            pop: 0.1
+            uvi: 5.5
+        hourly:
+          - dt: 1625450400
+            temp: 25.5
+            feels_like: 25.5
+            pressure: 1013
+            humidity: 50
+            dew_point: 15.5
+            uvi: 5.5
+            clouds: 20
+            visibility: 10000
+            wind_speed: 5.14
+            wind_deg: 200
+            weather:
+              - id: 800
+                main: Clear
+                description: clear sky
+                icon: 01d
+
+    WeatherHourly:
+      type: object
+      properties:
+        hourly:
+          type: array
+          items:
+            type: object
+            properties:
+              dt:
+                type: number
+              temp:
+                type: number
+              feels_like:
+                type: number
+              pressure:
+                type: number
+              humidity:
+                type: number
+              dew_point:
+                type: number
+              uvi:
+                type: number
+              clouds:
+                type: number
+              visibility:
+                type: number
+              wind_speed:
+                type: number
+              wind_deg:
+                type: number
+              weather:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    main:
+                      type: string
+                    description:
+                      type: string
+                    icon:
+                      type: string
+      example:
+        hourly:
+          - dt: 1625450400
+            temp: 25.5
+            feels_like: 25.5
+            pressure: 1013
+            humidity: 50
+            dew_point: 15.5
+            uvi: 5.5
+            clouds: 20
+            visibility: 10000
+            wind_speed: 5.14
+            wind_deg: 200
+            weather:
+              - id: 800
+                main: Clear
+                description: clear sky
+                icon: 01d
+
+    WeatherDaily:
+      type: object
+      properties:
+        hourly:
+          type: array
+          items:
+            type: object
+            properties:
+              dt:
+                type: number
+              temp:
+                type: number
+              feels_like:
+                type: number
+              pressure:
+                type: number
+              humidity:
+                type: number
+              dew_point:
+                type: number
+              uvi:
+                type: number
+              clouds:
+                type: number
+              visibility:
+                type: number
+              wind_speed:
+                type: number
+              wind_deg:
+                type: number
+              weather:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    main:
+                      type: string
+                    description:
+                      type: string
+                    icon:
+                      type: string
+        daily:
+          type: array
+          items:
+            type: object
+            properties:
+              dt:
+                type: number
+              sunrise:
+                type: number
+              sunset:
+                type: number
+              temp:
+                type: object
+                properties:
+                  day:
+                    type: number
+                  min:
+                    type: number
+                  max:
+                    type: number
+                  night:
+                    type: number
+                  eve:
+                    type: number
+                  morn:
+                    type: number
+              feels_like:
+                type: object
+                properties:
+                  day:
+                    type: number
+                  night:
+                    type: number
+                  eve:
+                    type: number
+                  morn:
+                    type: number
+              pressure:
+                type: number
+              humidity:
+                type: number
+              dew_point:
+                type: number
+              wind_speed:
+                type: number
+              wind_deg:
+                type: number
+              weather:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    main:
+                      type: string
+                    description:
+                      type: string
+                    icon:
+                      type: string
+              clouds:
+                type: number
+              pop:
+                type: number
+              uvi:
+                type: number
+      example:
+        hourly:
+          - dt: 1625450400
+            temp: 25.5
+            feels_like: 25.5
+            pressure: 1013
+            humidity: 50
+            dew_point: 15.5
+            uvi: 5.5
+            clouds: 20
+            visibility:

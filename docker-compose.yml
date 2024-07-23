@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    networks:
+      - my-network
+
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - /data/db
+      - ./mongo-init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
