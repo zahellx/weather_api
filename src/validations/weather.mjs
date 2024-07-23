@@ -4,7 +4,7 @@ const latSchema = Joi.number().required().min(-90).max(90).messages({
   'number.base': 'Latitude (lan) is required',
   'number.min': 'Latitude must be at least -90',
   'number.max': 'Latitude must be at most 90',
-  'any.required': 'Longitude (lon) is required on where filter (where[lat])'
+  'any.required': 'Longitude (lat) is required on where filter (where[lat])'
 });
 const lonSchema = Joi.number().required().min(-180).max(180).messages({
   'number.base': 'Longitude (lon) is required',
@@ -30,8 +30,12 @@ const findWeathers = {
       lon: lonSchema,
       hour: hourSchema,
       exclude: excludeSchema
-    }).required()
-  }).required()
+    }).required().messages({
+      'any.required': 'Where filter format is required',
+    })
+  }).required().messages({
+    'any.required': 'Query parameters are required',
+  })
 };
 
 const findWeathersDaily = {
@@ -39,8 +43,12 @@ const findWeathersDaily = {
     where: Joi.object({
       lat: latSchema,
       lon: lonSchema,
-    }).required()
-  }).required()
+    }).required().messages({
+      'any.required': 'Where filter format is required',
+    })
+  }).required().messages({
+    'any.required': 'Query parameters are required',
+  })
 };
 
 const findWeathersHourly = {
@@ -49,8 +57,12 @@ const findWeathersHourly = {
       lat: latSchema,
       lon: lonSchema,
       hour: hourSchema.required(),
-    }).required()
-  }).required()
+    }).required().messages({
+      'any.required': 'Where filter format is required',
+    })
+  }).required().messages({
+    'any.required': 'Query parameters are required',
+  })
 };
 
 export default{
