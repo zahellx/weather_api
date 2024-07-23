@@ -11,6 +11,7 @@ Make sure to add a valid `https://api.openweathermap.org/data/3.0/onecall` URL t
 
 To get the project running, execute the following Docker commands: `npm run docker` and `docker:test`. This will start a MongoDB instance and the application, with all configurations properly linked and the dependencies installed.
 
+First, run the `npm run docker` command to install the dependencies.
 
 ## Table of Contents
 
